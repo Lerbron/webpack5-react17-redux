@@ -4,6 +4,8 @@ import { testNum } from '@/actions/testActions'
 import checkNum from '@/utils/test'
 import imgUrl from '@/assets/icons/img.jpg'
 import { Button } from 'antd'
+import http from '@/utils/http'
+import API from '@/api'
 
 
 const Home= (props) => {
@@ -24,6 +26,10 @@ const Home= (props) => {
   useEffect(() => {
     let flag= checkNum(8)
     console.log("flag-->", flag)
+    http.get(API.MUSICS)
+      .then(res => {
+        console.log('---->', res)
+      })
   }, [])
 
   return <div>

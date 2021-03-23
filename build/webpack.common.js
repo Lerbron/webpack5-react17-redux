@@ -26,8 +26,8 @@ const {
 module.exports = {
   entry: path.resolve(__dirname, "../src/index.js"),
   output: {
-    filename: 'js/[name].[hash:8].js',
-    chunkFilename: 'js/[name].[hash:8].js',
+    filename: 'js/[name].[chunkhash:8].js',
+    chunkFilename: 'js/[name].[chunkhash:8].js',
     path: path.resolve(__dirname, '../dist'),
     publicPath: "/",
   },

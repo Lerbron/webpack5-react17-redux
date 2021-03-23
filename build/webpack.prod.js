@@ -11,6 +11,7 @@ const {
 } = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -43,9 +44,11 @@ module.exports = merge(common, {
         nodir: true
       }),
     }),
-    new webpack.BannerPlugin({
-      raw: true,
-      banner: '/** @preserve Powered by chenwl */',
+    new CompressionPlugin({
+      test: /\.js(\?.*)?$/i,
+      algorithm: 'gzip',
+      compressionOptions: { level: 5 },
+      // exclude:'config.js',
     }),
   ]
 })
