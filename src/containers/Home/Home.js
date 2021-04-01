@@ -38,6 +38,7 @@ const Home= (props) => {
     <div>{num}</div>
     <div onClick={add}>add</div>
     <img src={imgUrl} />
+    <div className='box'></div>
   </div>
 }
 

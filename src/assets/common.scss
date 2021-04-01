@@ -1,3 +1,12 @@
+@import './pxrem.scss';
+
 html, body{
   background: burlywood;
+}
+
+.box{
+  width: pxrem(200);
+  height: pxrem(200);
+  background: blanchedalmond;
+  border: pxrem(1) solid #e2e2e2;
 }
