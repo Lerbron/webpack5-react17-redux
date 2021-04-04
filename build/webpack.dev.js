@@ -8,6 +8,7 @@ const proxySetting = require('./proxy');
 const config = require('./config');
 
 module.exports = merge(common, {
+  target: 'web',
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
