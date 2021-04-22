@@ -53,12 +53,12 @@ http.interceptors.response.use(response => {
   }
   return response;
 }, err => {
-  let errResponse = err.response
+  let errResponse = err?.response??{}
 
   console.log('errObj:', errResponse)
 
   
-  message.error(errResponse.data && errResponse.data.error && errResponse.data.error.message || errResponse.statusText || intl.get('tips_net'));
+  message.error(errResponse?.data && errResponse?.data?.error && errResponse?.data?.error?.message || errResponse?.statusText || intl.get('tips_net'));
   return Promise.reject(errResponse);
 
 })
