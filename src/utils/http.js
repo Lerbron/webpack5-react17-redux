@@ -5,7 +5,7 @@ import {
 } from 'antd';
 import Qs from 'qs'
 
-const pendingReq = {};
+export const pendingReq = {};
 
 const http = axios.create({
   paramsSerializer: function (params) {

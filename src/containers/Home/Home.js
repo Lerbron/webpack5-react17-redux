@@ -6,6 +6,7 @@ import imgUrl from '@/assets/icons/img.jpg'
 import { Button } from 'antd'
 import http from '@/utils/http'
 import API from '@/api'
+import PageHoc from '@/Hoc/PageHoc'
 
 
 const Home= (props) => {
@@ -56,4 +57,4 @@ const mapDispatchToProps = (dispatch, ownProps ) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(PageHoc(Home))
