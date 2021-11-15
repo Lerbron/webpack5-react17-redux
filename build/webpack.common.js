@@ -3,9 +3,8 @@ const webpack = require('webpack');
 const config = require("./config")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const AntdDayjsWebpackPlugin= require('antd-dayjs-webpack-plugin');
 const WebpackBar = require("webpackbar");
 const os = require('os');
 var threadPool = os.cpus().length - 1;
@@ -115,6 +114,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new AntdDayjsWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../public/index.html'),
       filename: 'index.html',
